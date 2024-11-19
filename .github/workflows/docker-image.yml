@@ -18,6 +18,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}      
 
+    - name: Look around
+      run: |
+        ls -la
+        pwd
+        ls -la ..
+
     - name: Build and Push Docker Image
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }} docker/Dockerfile
