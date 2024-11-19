@@ -28,6 +28,6 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }} docker/
         docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-image:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-image:alpine3
+        docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executore:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:alpine3
     
