@@ -30,4 +30,5 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:alpine3
+        docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:alpine
     
