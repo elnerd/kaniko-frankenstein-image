@@ -7,12 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
-    steps:
+    steps:    
     - uses: actions/checkout@v4
         
     - name: Log in to Docker Hub
@@ -23,6 +20,6 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/my-image:${{ github.sha }} -f docker/Dockerfile
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-image:${{ github.sha }}
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }} docker/Dockerfile
+        docker push ${{ secrets.DOCKER_USERNAME }}/kaniko-executor:${{ github.sha }}
     
